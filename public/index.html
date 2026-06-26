@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daylight Booking + PRO Sync</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb bg-orb--left"></div>
+    <div class="bg-orb bg-orb--right"></div>
+
+    <main class="page">
+      <header class="hero">
+        <h1>Daylight Shipment Lookup</h1>
+      </header>
+
+      <section class="panes">
+        <section class="panel panel--query pane">
+          <label for="bookingInput">Booking or Probill Number(s)</label>
+          <textarea
+            id="bookingInput"
+            placeholder="Example:
+BKG1001
+123456
+123456B"
+          ></textarea>
+          <div class="actions">
+            <button id="queryBtn" type="button">Query Daylight</button>
+            <button id="clearBtn" type="button" class="btn-secondary">Clear</button>
+          </div>
+          <p id="message" class="message"></p>
+        </section>
+
+        <section class="panel pane">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Booking Number</th>
+                  <th>PRO Number</th>
+                </tr>
+              </thead>
+              <tbody id="resultsBody">
+                <tr>
+                  <td colspan="2" class="empty">Run a query to see results.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel pane">
+          <div id="dashboards" class="dashboards"></div>
+        </section>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
